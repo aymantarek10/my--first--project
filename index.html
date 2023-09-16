@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta http-equiv="x-UA-compatible" content="IE=edge"/>
+        <meta name="viewport" content="width=device, intial-scale=1.0">
+        <title>notepage</title>
+        <link rel="stylesheet" href="./css/master.css"> 
+    </head>
+    <body>
+        <div class="container">
+            <div class="title-wrap">
+                <span>title: </span>
+                <input type="text" class="line"> 
+            </div>
+            <div class="line-wrap">
+                <input type="text" class="line" />
+            </div>
+            <div class="line-wrap">
+                <input type="text" class="line" />
+            </div>
+            <div class="line-wrap">
+                <input type="text" class="line" />
+            </div>
+            <div class="line-wrap">
+                <input type="text" class="line" />
+            </div>
+            <div class="line-wrap">
+                <input type="text" class="line" />
+            </div>
+            <div class="line-wrap">
+                <input type="text" class="line" />
+            </div>
+            <div class="line-wrap">
+                <input type="text" class="line" />
+            </div>
+            <div class="line-wrap">
+                <input type="text" class="line" />
+            </div>
+            <div class="line-wrap">
+                <input type="text" class="line" />
+            </div>
+            <div class="line-wrap">
+                <input type="text" class="line" />
+            </div>
+            <div class="line-wrap">
+                <input type="text" class="line" />
+            </div>
+            <div class="line-wrap">
+                <input type="text" class="line" />
+            </div>
+            <div class="line-wrap">
+                <input type="text" class="line" />
+            </div>
+            <button class="btn">
+                save
+            </button>
+        </div> 
+        <script>
+            const lines = document.querySelectorAll(".line");
+            const button = document.getElementsByClassName("btn")[0];
+            let save = true;
+
+            const saveEdit = () => {
+                if (save){
+                button.innerHTML = 'Edit';
+                save = false;
+            } else{
+                button.innerHTML = 'save';
+                save = true ;
+            }
+            button.classList.toggle("edit-btn");
+            linecontrols();
+        }
+
+        const linecontrols = () =>{
+            lines.forEach(line => {
+                if (!save){
+                    line.setAttribute("diabled", true);
+                }else{
+                    line.setAttribute("diabled", false);
+                }
+            });
+        }
+        const setlinesmaxwidth = () => {
+            lines.forEach(line =>{
+                line.setAttribute("maxlength", line.offsetwidth/12);
+            })
+        }
+        button.addeventlistener
+            button.addEventListener("click",saveEdit);
+        </script>
+    </body>
+</html>
